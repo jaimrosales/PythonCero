@@ -1,0 +1,100 @@
+#list o array o vector o slice 
+#la lista puede contener cualquier tipo de dato
+#se define con corchetes []
+
+frutas = ["manzana", "banana", "cereza"]
+numeros = [1, 2, 3, 4, 5]
+mixta = ["texto", 123, 45.67, True]
+print(frutas)
+print(type(frutas)) #<class 'list'>
+print(numeros)
+print(mixta)
+#acceder a un elemento de la lista
+print(frutas[0]) #manzana
+print(frutas[1]) #banana
+print(frutas[2]) #cereza
+#modificar un elemento de la lista
+frutas[0] = "naranja"   
+print(frutas) #['naranja', 'banana', 'cereza']
+#agregar un elemento al final de la lista
+frutas.append("uva")    
+print(frutas) #['naranja', 'banana', 'cereza', 'uva']
+#eliminar un elemento de la lista   
+frutas.remove("banana")
+print(frutas) #['naranja', 'cereza', 'uva']
+print (mixta[1:3])  #[123, 45.67]
+#eliminar el ultimo elemento de la lista
+frutas.pop()
+print(frutas) #['naranja', 'cereza']
+#eliminar un elemento por su indice
+del frutas[0]   
+print(frutas) #['cereza']
+#longitud de la lista
+print(len(frutas)) #1
+#recorrer una lista con un ciclo for
+for fruta in frutas:
+    print(fruta)
+#['cereza']
+#crear una lista vacia
+verduras = []
+print(verduras) #[]
+#agregar elementos a la lista vacia
+verduras.append("lechuga")  
+verduras.append("tomate")
+verduras.append("zanahoria")
+print(verduras ) #['lechuga', 'tomate', 'zanahoria']
+#insertar un elemento en una posicion especifica
+verduras.insert(1, "pepino")
+print(verduras) #['lechuga', 'pepino', 'tomate', 'zanahoria']
+#ordenar una lista  
+numeros = [5, 2, 9, 1, 5, 6]
+numeros.sort()
+print(numeros) #[1, 2, 5, 5, 6, 9]
+#ordenar una lista en orden inverso
+numeros.sort(reverse=True)
+print(numeros) #[9, 6, 5, 5, 2, 1]
+#invertir una lista
+numeros.reverse()
+print(numeros) #[1, 2, 5, 5, 6, 9]
+#buscar un elemento en la lista
+print("tomate" in verduras) #True
+print("banana" in frutas) #False
+#contar cuantas veces aparece un elemento en la lista
+print(numeros.count(5)) #2  
+#copiar una lista
+nueva_lista = frutas.copy()
+print(nueva_lista) #['cereza']
+#vaciar una lista
+frutas.clear()
+print(frutas) #[]
+#eliminar una lista
+del frutas
+#print(frutas) #NameError: name 'frutas' is not defined
+#listas anidadas
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matriz) #[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matriz[0]) #[1, 2, 3] 
+print(matriz[1][2]) #6
+#recorrer una lista anidada
+for fila in matriz:
+    for elemento in fila:
+        print(elemento, end=" ")
+#1 2 3 4 5 6 7 8 9  
+print()
+#lista por comprension      
+cuadrados = [x**2 for x in range(10)]
+print(cuadrados) #[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+#filtrar una lista con comprension
+pares = [x for x in range(10) if x % 2 == 0]
+print(pares) #[0, 2, 4, 6, 8]
+#convertir una lista de strings a mayusculas
+mayusculas = [s.upper() for s in ["hola", "mundo", "python"]]
+print(mayusculas) #['HOLA', 'MUNDO', 'PYTHON']
+#convertir una lista de strings a minusculas
+minusculas = [s.lower() for s in ["HOLA", "MUNDO", "PYTHON"]]
+print(minusculas) #['hola', 'mundo', 'python']
+new_lista = frutas + verduras + numeros
+print(new_lista) #['cereza', 'lechuga', 'pepino', 'tomate', 'zanahoria', 1, 2, 5, 5, 6, 9]
+
+new_lista2 = new_lista[1:7]
+print(new_lista2) #['lechuga', 'pepino', 'tomate', 'zanahoria', 1, 2]
