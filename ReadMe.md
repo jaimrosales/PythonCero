@@ -22,4 +22,13 @@ declaracion de variables
  assert     del         global      not         with   
  async      elif        if          or              yield
 
+input para ingresar desde app python cmd
+// input siempre registrara str
+name = input("")
+
+age = int(input("ingrese su edad"))
+
+print no permite imprimir numeros, para hacerlo hay que antepones str y porner entre parentesis la variable de valor distinto a str
+ 
+
 
